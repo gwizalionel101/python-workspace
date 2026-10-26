@@ -1,0 +1,5 @@
+m=(input("Scratch the sentence:"))
+m=m.replace(" ","")
+print("..................................................................")
+print("This is the sentence without space:",m)
+print(len(m))

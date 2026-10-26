@@ -1,0 +1,12 @@
+student={
+   "name":"lionel",
+   "age":15,
+   "location":"Nyarutarama",
+   "school":"rca",
+   "amount":1000
+ }
+print(student)
+student["carnbr"]="RAF101M"
+print(student)
+print(student.keys())
+print(student.values())
