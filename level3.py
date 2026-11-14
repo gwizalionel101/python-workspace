@@ -1,239 +1,148 @@
-  #LIST SEARCH
-print()
-print("===THIS IS ABOUT LIST SEARCH===")
-numbers = [10, 20, 30, 20, 40, 20, 50]
-value = int(input("Enter the value to search for: "))
-positions = []
-for i in range(len(numbers)):
-    if numbers[i] == value:
-        positions.append(i)
-if positions:
-    print("Value found at positions:", positions)
-else:
-    print("Value not found.")
+#THIS IS ABOUT EXERCISE 21
+print("THIS IS ABOUT EXERCISE 21")
+print("TO FIND IF SOMEONE IS ELIGIBLE TO VOTE")
+name=input("Enter your Fullname:")
+age=int(input("Enter your age:"))
+if age>=18:
+  print("Eligible to vote!")
+else :
+  print("Not eligible to vote")
+
+#THIS IS ABOUT EXERCISE 22
+print("THIS ABOUT MULTIPLICATION NUMBER OF ANY NUMBER")
+nbr=int(input("Provide a number :"))
+print("The multiplication table of this  provided number is:")
+number=[1,2,3,4,5,6,7,8,9,10,11,12]
+for a in number:
+  result=nbr*a
+  print(f"{nbr}*{a}={result}")
+print("would you like more multiplication tables? (yes/no)")
+if input() == "yes":
+  nbr=int(input("Provide a number :"))
+  print("The multiplication table of this  provided number is:")
+  number=[1,2,3,4,5,6,7,8,9,10,11,12]
+  for a in number:
+    result=nbr*a
+    print(f"{nbr}*{a}={result}")
+else :
+  print("Thank you for using this program !")
 
 
-    #EVEN COMPREHENSION
-print()
-print("===THIS ABOUT LIST COMPREHENSION===")
-squares = [n ** 2 for n in range(1, 101) if n % 2 == 0]
-print(squares)
-   
-
-    #ODD COMPREHENSION
-print("===THIS ABOUT LIST COMPREHENSION ON ODDS===")
-squares=[ n ** 2 for n in range(1,101) if n % 2 !=0]
-print(squares)
-
-  
-    #MATRIX ADDITION
-print()
-print("===THE MATRIX ADDITION===")
-matrix1 = [[1, 2, 3],[4, 5, 6]]
-matrix2 = [[7, 8, 9],[10, 11, 12]]
-result = []
-for i in range(len(matrix1)):
-    row = []
-    for j in range(len(matrix1[0])):
-        row.append(matrix1[i][j] + matrix2[i][j])
-    result.append(row)
-print("Sum of matrices:")
-for row in result:
-    print(row)
+#THIS ABOUT DEFAULT PARAMETERS
+def me(name,greeting="Hello"):
+  return name + " " + greeting
+print(me("John"))
+print(me("John", "Good morning"))
 
 
-    #MATRIX TRANSPOSE
-print()
-print("===THIS ABOUT MATRIX TRANSPOSE===")
-matrix = [[1, 2, 3],[4, 5, 6]]
-transpose = []
-for j in range(len(matrix[0])):
-    row = []
-    for i in range(len(matrix)):
-        row.append(matrix[i][j])
-    transpose.append(row)
-print("Original matrix:")
-for row in matrix:
-    print(row)
-print("Transposed matrix:")
-for row in transpose:
-    print(row)
+#THIS ABOUT EXERCISE 23
+number=int(input("Enter the number of your choice:"))
+print(" === THE SUM OF THE NATURAL NUMBER IS === ")
+print("Pease consider the last sentence !")
+tt=0
+h=range(0,number+1)
+for m in h:
+  tt= tt + m
+print(f"The sum of the natural numbers from 0 to {number}is :{tt}")
 
 
-    #TUPLE BASED RECORDS
-print()
-print("===THIS IS ABOUT TUPLE BASED RECORDS===")
-employees = [
-    (101, "Alice", "Manager", 500000),
-    (102, "John", "Developer", 350000),
-    (103, "Mary", "Accountant", 300000)
-]
-for employee in employees:
-    print("Employee ID:", employee[0])
-    print("Name:", employee[1])
-    print("Position:", employee[2])
-    print("Salary:", employee[3])
-    print("--------------------")
+#THIS ABOUT EXERCISE 29
+print("THIS IS ABOUT PRINTING A DIAMOND")
+rows = int(input("Enter the number of rows: "))
+for i in range(1, rows + 1):
+    for j in range(rows - i):
+        print(" ", end="")
+    for k in range(2 * i - 1):
+        print("*",end="")
+    print()
 
 
-    #SET OPERATIONS
-print()
-print("===THIS ABOUT SET OPERATIONS===")
-students_a = {101, 102, 103, 104, 105}
-students_b = {104, 105, 106, 107, 108}
+#THIS IS ABOUT DIAMOND
+print("THIS IS ABOUT PRINTING DIAMOND")
+rows = int(input("Enter the number of rows: "))  #taking input from user
+for i in range(1,rows+1):
+  print(" "*(rows-i) + "*"*(2*i-1))  #here i is the current row number and remember that the last number in range dont count it
+for i in range(rows-1,0,-1):
+  print(" "*(rows-i) + "*"*(2*i-1))  #here i is the current row number
 
-print("Union:", students_a | students_b)
-print("Intersection:", students_a & students_b)
-print("Difference (A - B):", students_a - students_b)
-print("Symmetric difference:", students_a ^ students_b)
-
-
-     #WORD FREQUENCY DICTIONARY
-print()
-print("===THIS IS ABOUT WORD FREQUENCY DICTIONARY===")
-paragraph = input("Enter a paragraph: ")
-words = paragraph.lower().split()
-frequency = {}
-for word in words:
-    word = word.strip(".,!?;:")
-    if word != "":
-        frequency[word] = frequency.get(word, 0) + 1
-print("Word frequencies:")
-for word, count in frequency.items():
-    print(word, ":", count)
-
-
-   
-# CONTACT BOOK
-
-print()
-print("=== THIS IS ABOUT CONTACT BOOK ===")
-
-contacts = {}
-
+#THIS ABOUT EXERCISE 30
 while True:
-    print("\n--- CONTACT BOOK ---")
-    print("1. Add contact")
-    print("2. Search contact")
-    print("3. Update contact")
-    print("4. Delete contact")
-    print("5. Display all contacts")
-    print("6. Exit")
-
-    choice = input("Choose an option (1-6): ").strip()
-    if choice == "1":
-        name = input("Enter name: ").strip()
-        if name == "":
-            print("Name cannot be empty.")
-        elif name in contacts:
-            print("This contact already exists.")
+    print()
+    print("=== MENU-DRIVEN CALCULATOR ===")
+    print("1. Addition\n2. Subtraction\n3.multiplication\n4.division\n5.exit")
+    choice = int(input("Choose an option : "))
+    if choice == 1:
+        n1 = float(input("Enter the first number: "))
+        n2 = float(input("Enter the second number: "))
+        print("Result:", n1 + n2)
+    elif choice == 2:
+        n1 = float(input("Enter the first number: "))
+        n2 = float(input("Enter the second number: "))
+        print("Result:", n1 - n2)
+    elif choice == 3:
+        n1 = float(input("Enter the first number: "))
+        n2 = float(input("Enter the second number: "))
+        print("Result:", n1 * n2)
+    elif choice == 4:
+        n1 = float(input("Enter the first number: "))
+        n2 = float(input("Enter the second number: "))
+        if n2 == 0:
+           print("Error: It is not divide by zero!")
         else:
-            phone = input("Enter phone number: ").strip()
-
-            if phone == "":
-                print("Phone number cannot be empty.")
-            else:
-                contacts[name] = phone
-                print("Contact added successfully.")
-    elif choice == "2":
-        name = input("Enter name to search: ").strip()
-        if name in contacts:
-            print("Name:", name)
-            print("Phone number:", contacts[name])
-        else:
-            print("Contact not found.")
-    elif choice == "3":
-        name = input("Enter name to update: ").strip()
-        if name in contacts:
-            phone = input("Enter new phone number: ").strip()
-            if phone == "":
-                print("Phone number cannot be empty.")
-            else:
-                contacts[name] = phone
-                print("Contact updated successfully.")
-        else:
-            print("Contact not found.")
-    elif choice == "4":
-        name = input("Enter name to delete: ").strip()
-        if name in contacts:
-            del contacts[name]
-            print("Contact deleted successfully.")
-        else:
-            print("Contact not found.")
-    elif choice == "5":
-        if len(contacts) == 0:
-            print("Your contact book is empty.")
-        else:
-            print("\n--- ALL CONTACTS ---")
-            for name, phone in contacts.items():
-                print(name, ":", phone)
-            print("Total contacts:", len(contacts))
-    elif choice == "6":
-        print("Thank you for using the Contact Book!")
-        print("Goodbye!")
+           print(f"The result of {n1}/{n2}:",n1/n2)
+    elif choice == 5:
+        print("Thank you for using the calculator!")
         break
     else:
-        print("Invalid choice. Please choose from 1 to 6.")
+        print("Invalid choice! Please choose between 1 and 5.")
+
+    
+  #THIS IS ABOUT EXERCISE 31
+std=[89,90,65,78,80,97,94,65,55,40]
+tt=sum(std)
+length=len(std)
+avg=tt/length
+hg=max(std)
+lw=min(std)
+print("the total marks:",tt)
+print("the average marks:",avg)
+print("the highest mark:",hg)
+print("the lowest mark:",lw)
 
 
-
-        #INVENTORY DICTIONARY
-print()
-print("===THIS ABOUT INVENTORY DICTIONARY===")
-inventory = {
-    "Laptop": {"quantity": 5, "price": 500000},
-    "Phone": {"quantity": 10, "price": 200000},
-    "Keyboard": {"quantity": 8, "price": 15000}
-}
-total_value = 0
-for product, details in inventory.items():
-    quantity = details["quantity"]
-    price = details["price"]
-    value = quantity * price
-    print("Product:", product)
-    print("Quantity:", quantity)
-    print("Price:", price)
-    print("Total value:", value)
-    print("--------------------")
-    total_value += value
-print("Total inventory value:", total_value)
+#THIS IS ABOUT EXERCISE 32
+print("TO REMOVE THE SAME NUMBER IN THE LIST AND STAY ONLY WITH ONLY ONE ")
+numbers = [1, 2, 3, 2, 4, 1, 5, 3]
+unique_numbers = []
+for n in numbers:
+    if n not in unique_numbers:
+        unique_numbers.append(n)
+print("Original list:", numbers)
+print("List without duplicates:", unique_numbers)
 
 
-      #MERGE DICTIONARIES
-print()
-print("===THIS ABOUT MERGING DICTIONARIES===")
-dictionary1 = {
-    "name": "Alice",
-    "age": 20,
-    "city": "Kigali"
-}
-dictionary2 = {
-    "age": 22,
-    "country": "Rwanda",
-    "course": "Programming"
-}
-merged = dictionary1.copy()
-merged.update(dictionary2)
-print("First dictionary:", dictionary1)
-print("Second dictionary:", dictionary2)
-print("Merged dictionary:", merged)
+#THIS IS ABOUT EXERCISE 33
+#non returning functions
+def greet():
+    print("Hello!")
+greet()
+
+#multiplying the numbers
+def multiply(*params):
+    return params
+args=multiply(1,2,3,4,5)
+result = 1
+for n in args:
+    result *= n
+print(result)
+
+#subtacting the numbers
+def subtract(*params):
+    return params[0] - sum(params[1:])
+print(subtract(10, 1, 2, 3))
 
 
-      #SORT DICTIONARY RECORDS
-print()
-print("===THIS ABOUT SORTING DICTIONARIES=== ")
-students = {
-    "Alice": 85,
-    "John": 72,
-    "Mary": 95,
-    "Peter": 68,
-    "David": 90
-}
-sorted_students = sorted(
-    students.items(),
-    key=lambda item: item[1],
-    reverse=True
-)
-print("Students sorted by marks:")
-for name, marks in sorted_students:
-    print(name, ":", marks)
+count = 1
+while count <= 5:
+  print(count)
+  count += 1
