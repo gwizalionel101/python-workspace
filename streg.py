@@ -1,0 +1,16 @@
+import streamlit as st
+st.header("THIS IS A STUDENT REGISTRATION")
+name=st.text_input("Enter your name:")
+age=st.number_input("Enter your age:",max_value=200,step=1)
+language=st.selectbox("Select your programming language:",["  ","Python","JavaScript","C++","C","Rust","c#","Other more"])
+level=st.radio("Select your studying level:",["Beginner","Intermediate","Advanced"])
+description=st.text_area("Add your thoughts:")
+terms=st.checkbox("Accept terms and conditons to continue")
+if st.button("Register"):
+  st.markdown("**YOUR CREDENTIALS ARE**")
+  st.write("Your Name is: ",name)
+  st.write("Your Age is: ",age)
+  st.write("Your preferred language is: ",language)
+  st.write("Your level of study is: ",level)
+  st.write ("your thoughts are:",description)
+  st.markdown("*Thank you for Registerring !*")
